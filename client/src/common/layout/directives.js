@@ -70,9 +70,9 @@
               container = scope.containerSelector ? angular.element(scope.containerSelector) : element.closest('.container'),
               parent = element.parent(),
               target = scope.targetSelector ? angular.element(scope.targetSelector) : parent,
-              panel = element.find('.d3-panel-popover-panel'),
+              panel = element.find('.rez-panel-popover-panel'),
               panelBody = element.find('.panel-body'),
-              arrow = element.find('.d3-panel-popover-arrow');           
+              arrow = element.find('.rez-panel-popover-arrow');           
 
             scope.layoutPopover = function() {
 

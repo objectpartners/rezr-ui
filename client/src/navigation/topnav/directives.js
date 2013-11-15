@@ -57,14 +57,14 @@
           link : function (scope, element, attrs) {
             if (angular.isArray(scope.item.dropdown)) {
               element.html(
-                '<a class="dropdown-toggle d3-nav-icon" data-toggle="dropdown">' + 
+                '<a class="dropdown-toggle rez-nav-icon" data-toggle="dropdown">' + 
                   '<i class="icon-{{item.icon}} icon-2x"></i><i class="icon-chevron-down"></i>'+
                 '</a>' + 
                 '<div dropdown-topnav item="item" user="user"/>'
               );
             } else {
               element.html(
-                '<a class="d3-nav-icon" ng-href="{{item.href}}">' +
+                '<a class="rez-nav-icon" ng-href="{{item.href}}">' +
                   '<i class="icon-{{item.icon}} icon-2x"></i>' +
                 '</a>'
               );

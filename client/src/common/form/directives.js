@@ -22,9 +22,9 @@
             });
             scope.$watch(attrs.ngModel, function (newValue, oldValue) {
               if (newValue) {
-                element.addClass('d3-btn-toggled');
+                element.addClass('rez-btn-toggled');
               } else {
-                element.removeClass('d3-btn-toggled');
+                element.removeClass('rez-btn-toggled');
               }
             });
           }

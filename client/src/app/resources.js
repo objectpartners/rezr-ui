@@ -56,52 +56,6 @@
               method: 'POST'
             }
           }),
-          
-          // Internal Users
-          internalUser : $resource(
-            $apiUrl + '/internal/users/:id', 
-            {id: '@id'},
-            {
-              'query' : {
-                method: 'GET',
-                params: {
-                  page: '@page',
-                  size: '10'
-                }
-              },
-              'update' : {
-                method: 'PUT'
-              }
-            }
-          ),
-
-          internalUserRole : $resource(
-            $apiUrl + '/internal/users/:userId/roles/:id',
-            {userId: '@userId', id: '@id'}
-          ),
-
-          internalUserRolePermission : $resource(
-            $apiUrl + '/internal/users/:userId/roles/:roleId/permissions/:id',
-            {userId: '@userId', roleId: '@roleId', id: '@id'}
-          ),
-
-          // Roles
-          role : $resource(
-            $apiUrl + '/roles/:id', 
-            {id: '@id'}
-          ),
-
-          rolePermission : $resource(
-            $apiUrl + '/roles/:roleId/permissions/:id', 
-            {roleId: '@roleId', id: '@id'}
-          ),
-
-          // Permissions
-          permission : $resource(
-            $apiUrl + '/permissions/:id', 
-            {id: '@id'}
-          ),
-
           // ui 
           sidenav : $resource($apiUrl + '/ui/sidenav/items')
 
@@ -111,7 +65,7 @@
       }
     ]);
   
-  resources.value('$apiUrl', '/d3-control-rest/api');
+  resources.value('$apiUrl', '/rezr/api');
 
   logger.debug("Registered api.resources");
 

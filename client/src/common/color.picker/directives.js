@@ -56,8 +56,8 @@
             scope.$watch('pickerShown', function(newValue) {
               if (newValue) {
                 colorPickerElement = $compile('<div color-picker-popover="model" color-picker-popover-shown="pickerShown" ' + 
-                  'color-picker-popover-container=".d3-view-container>.container" color-picker-popover-target=".d3-color-picker-btn"></div>')(scope);
-                element.find('.d3-color-picker-btn').parent().append(colorPickerElement);
+                  'color-picker-popover-container=".rez-view-container>.container" color-picker-popover-target=".rez-color-picker-btn"></div>')(scope);
+                element.find('.rez-color-picker-btn').parent().append(colorPickerElement);
                 button.addClass("active");
               } else {
                 if (colorPickerElement) colorPickerElement.remove();
@@ -88,8 +88,8 @@
               container = scope.containerClass ? angular.element(scope.containerClass) : angular.element('body'),
               parent = element.parent(),
               target = scope.targetClass ? parent.find(scope.targetClass) : parent,
-              panel = element.find('.d3-color-picker-panel'),
-              arrow = element.find('.d3-color-picker-popover-arrow');           
+              panel = element.find('.rez-color-picker-panel'),
+              arrow = element.find('.rez-color-picker-popover-arrow');           
 
             scope.layoutPopover = function() {
 
