@@ -1,0 +1,46 @@
+
+.rez-quick-view-navbar {
+  z-index: 101;
+  .rez-quick-view-nav-more {
+    font-size: 20px;
+    padding-top: 0;
+    padding-bottom: 0;
+    line-height: 50px;
+    vertical-align: middle;
+  }
+}
+
+.rez-quickview-list-item {
+  position: absolute;
+  height: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  bottom: 0;
+  width: 100%;
+  >.row {
+    cursor: pointer;
+    padding: 15px 15px 15px 5px;
+    &:hover { 
+      background-color: rgba(255, 255, 255, 0.5); 
+    }
+  }
+  .time, .date {
+    text-align: right;
+    padding-right: 10px;
+    font-size: 11px;
+  }
+  .type, .category, .title {
+    font-size: 16px;
+  }
+  .subject, .description {
+    padding-right: 10px;
+    padding-left: 65px;
+    min-height: 0;
+  }
+  .icon {
+    text-align: right;
+    .icon-stack {
+      padding-left: 5px;
+    }
+  }
+}
