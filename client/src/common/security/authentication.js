@@ -77,7 +77,7 @@
             deferred.resolve(user);
           }, 1000);
 
-          // $api.login.login({user : {username: username, password: password}}).$promise.then(function(user) {
+          // $api.login.login({username: username, password: password}).$promise.then(function(user) {
           //   authentication.setAuthentication(user);
 
           //   if (securityContext.authenticated) {

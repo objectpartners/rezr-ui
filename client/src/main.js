@@ -40,16 +40,7 @@
     'authorizationProvider', 
     function ($stateProvider, $httpProvider, $urlRouterProvider, authorizationProvider) {
     
-      $urlRouterProvider.otherwise("/main");
-
-      $stateProvider.state('main', {
-        url: '/main',
-        controller: 'Main Controller',
-        templateUrl: 'assets/templates/main.html',
-        resolve : {
-          authenticatedUser: authorizationProvider.requireAuthenticatedUser
-        }
-      });
+      $urlRouterProvider.otherwise("/rezr");
 
   }])
 
