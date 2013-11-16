@@ -23,7 +23,10 @@
         var y = date.getFullYear();
 
         $scope.events = [
-          {title: 'All Day Event',start: new Date(y, m, 1)}
+          {title: 'Some Reservation',start: new Date(y, m - 1, 27), end: new Date(y, m, 1)},
+          {title: 'Some Reservation',start: new Date(y, m , 4), end: new Date(y, m, 7)},
+          {title: 'Some Reservation',start: new Date(y, m , 10), end: new Date(y, m, 16)},
+          {title: 'Some Reservation',start: new Date(y, m , 19), end: new Date(y, m, 26)},
         ];
 
         $scope.eventSources = [$scope.events];

@@ -26,10 +26,11 @@
 
         authorization.requireAuthenticatedUser().then(function (user) {
           $scope.items = [
-            { 'state': 'rezr.dashboard', 'icon': 'dashboard', 'title': 'Reservations', 'position': 1,
+            { 'state': 'rezr', 'icon': 'dashboard', 'title': 'Reservations', 'position': 1,
               'subitems': [
-                {'state': 'rezr.timeslots', 'title': 'Reserve a Time Slot', 'position': 1},
-                {'state': 'rezr.admin', 'title': 'Admin Reservations', 'position': 2}
+                {'state': 'rezr.dashboard', 'title': 'Dashboard', 'position': 1},
+                {'state': 'rezr.timeslots', 'title': 'Reserve a Time Slot', 'position': 2},
+                {'state': 'rezr.admin', 'title': 'Admin Reservations', 'position': 3}
               ]
             },
             { 'state': 'admin', 'icon': 'cogs', 'title': 'Administration', 'position': 2,
@@ -60,6 +61,7 @@
 
         $scope.isInState = function() {
           if ($scope.item.includeMatchState) {
+            logger.debug($scope.inState, $scope.item.includeMatchState);
             $scope.inState = $state.includes($scope.item.includeMatchState);
           } else {
             $scope.inState = $state.includes($scope.item.state);
