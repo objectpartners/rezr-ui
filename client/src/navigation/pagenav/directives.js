@@ -7,7 +7,7 @@
 
   angular.module('navigation.pagenav.directives', [])
 
-    .directive('d3Pagenav',[
+    .directive('rezrPagenav',[
       function () {
         return {
           replace: true,
@@ -20,7 +20,7 @@
       }]
     )
 
-    .directive('d3PagenavItem',
+    .directive('rezrPagenavItem',
       function () {
         return {
           replace: false,

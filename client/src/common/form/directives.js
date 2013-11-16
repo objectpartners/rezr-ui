@@ -89,7 +89,7 @@
       };
     })
 
-    .directive('d3FormSectionHeader', function() {
+    .directive('rezrFormSectionHeader', function() {
       return {
         replace: true,
         transclude: true,

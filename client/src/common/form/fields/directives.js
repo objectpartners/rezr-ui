@@ -39,7 +39,7 @@
 
   angular.module('common.form.field.directives', [])
 
-    .directive('d3FieldWrap', [
+    .directive('rezrFieldWrap', [
       '$compile',
       function ($compile) {
         return {
@@ -66,7 +66,7 @@
       }]
     )
 
-    .directive('d3DatepickerPopup', [
+    .directive('rezrDatepickerPopup', [
       '$compile',
       '$parse',
       '$document',
@@ -78,7 +78,7 @@
           require: 'ngModel',
           link: function(originalScope, element, attrs, ngModel) {
             var closeOnDateSelection = angular.isDefined(attrs.closeOnDateSelection) ? scope.$eval(attrs.closeOnDateSelection) : datepickerPopupConfig.closeOnDateSelection;
-            var dateFormat = attrs.d3DatepickerPopup || datepickerPopupConfig.dateFormat;
+            var dateFormat = attrs.rezrDatepickerPopup || datepickerPopupConfig.dateFormat;
 
             // create a child scope for the datepicker directive so we are not polluting original scope
             var scope = originalScope.$new();
@@ -250,7 +250,7 @@
       }
     ])
 
-    .directive('d3StaticField', function () {
+    .directive('rezrStaticField', function () {
       return {
         replace: true,
         restrict: 'A',

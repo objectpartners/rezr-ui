@@ -18,25 +18,46 @@
       .state('admin', {
         url: '/admin',
         controller: 'AdminController',
-        templateUrl: 'assets/templates/app/admin/index.html'
+        templateUrl: 'assets/templates/common/modules/page-main.html',
+        data : {
+          title: 'Administration'
+        }
       })
 
       .state('admin.seasons', {
         url: '/season',
         controller: 'AdminSeasonsController',
-        templateUrl: 'assets/templates/app/admin/seasons/index.html'
+        templateUrl: 'assets/templates/app/admin/seasons/index.html',
+        data : {
+          section: 'Seasons'
+        }
       })
 
       .state('admin.timeslots', {
         url: '/timeslots',
         controller: 'AdminTimeSlotsController',
-        templateUrl: 'assets/templates/app/admin/timeslots/index.html'
+        templateUrl: 'assets/templates/app/admin/timeslots/index.html',
+        data : {
+          section : 'Time Slots'
+        }
       })
 
       .state('admin.properties', {
         url: '/properties',
         controller: 'AdminPropertiesController',
-        templateUrl: 'assets/templates/app/admin/properties/index.html'
+        templateUrl: 'assets/templates/app/admin/properties/index.html',
+        data: {
+          section: 'Properties'
+        }
+      })
+
+      .state('admin.properties.detail', {
+        url: '/detail',
+        controller: 'AdminPropertiesDetailController',
+        templateUrl: 'assets/templates/app/admin/properties/detail.html',
+        data : {
+          section: 'Property Detail'
+        }
       });
   }]);
 

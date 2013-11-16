@@ -55,7 +55,7 @@
         };
       }
     ])
-    .directive('d3PanelPopoverPositioner', [
+    .directive('rezrPanelPopoverPositioner', [
       '$window',
       function ($window) {
         return {
@@ -63,7 +63,7 @@
           scope: {
             containerSelector: '@',
             targetSelector: '@',
-            isOpen: '=d3PanelPopoverPositionerIsOpen'
+            isOpen: '=rezrPanelPopoverPositionerIsOpen'
           },
           link: function (scope, element, attrs) {
             var windowEl = angular.element($window),

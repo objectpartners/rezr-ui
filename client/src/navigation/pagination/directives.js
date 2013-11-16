@@ -7,7 +7,7 @@
 
   angular.module('navigation.pagination.directives', [])
 
-    .directive('d3Pagination',[
+    .directive('rezrPagination',[
       function () {
         return {
           replace: true,
@@ -22,7 +22,7 @@
       }]
     )
 
-    .directive('d3PaginationItem',
+    .directive('rezrPaginationItem',
       function () {
         return {
           replace: false,
