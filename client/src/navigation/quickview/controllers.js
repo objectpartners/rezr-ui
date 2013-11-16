@@ -50,30 +50,27 @@
     .controller('QuickviewAlertsController', [
       '$scope',
       '$state',
-      'alertMockDataService',
       'quickviewSharedEventService',
-      function ($scope, $state, alertMockDataService, quickviewSharedEventService){
-        $scope.alerts = alertMockDataService.list();
+      function ($scope, $state, quickviewSharedEventService){
+        
       }
     ])
 
     .controller('QuickviewEventsController', [
       '$scope',
       '$location',
-      'eventMockDataService',
       'quickviewSharedEventService',
-      function ($scope, $location, eventMockDataService, quickviewSharedEventService){
-        $scope.events = eventMockDataService.list();
+      function ($scope, $location, quickviewSharedEventService){
+       
       }
     ])
 
     .controller('QuickviewInboxController', [
       '$scope',
       '$location',
-      'inboxMockDataService',
       'quickviewSharedEventService',
-      function ($scope, $location, inboxMockDataService, quickviewSharedEventService){
-        $scope.messages = inboxMockDataService.list();
+      function ($scope, $location, quickviewSharedEventService){
+        
       }
     ]);
 
