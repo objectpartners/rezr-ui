@@ -155,7 +155,19 @@
         };
 
         $scope.createNew = function createNew () {
-          $state.go('admin.properties.new');
+          $state.go('admin.properties.create');
+        };
+      }
+    ])
+
+    .controller('AdminPropertiesCreateController', [
+      '$scope',
+      '$state',
+      function ($scope, $state) {
+
+        $scope.cancel = function cancel () {
+          // refresh the model
+          $state.go('admin.properties');
         };
       }
     ])

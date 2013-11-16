@@ -70,6 +70,15 @@
         }
       })
 
+      .state('admin.properties.create', {
+        url: '/create',
+        controller: 'AdminPropertiesCreateController',
+        templateUrl: 'assets/templates/app/admin/properties/create.html',
+        data : {
+          section: 'Create Vacation Property'
+        }
+      })
+
       .state('admin.properties.detail', {
         url: '/detail',
         controller: 'AdminPropertiesDetailController',
