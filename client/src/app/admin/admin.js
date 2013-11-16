@@ -25,13 +25,32 @@
       })
 
       .state('admin.seasons', {
-        url: '/season',
+        url: '/seasons',
         controller: 'AdminSeasonsController',
         templateUrl: 'assets/templates/app/admin/seasons/index.html',
         data : {
           section: 'Seasons'
         }
       })
+
+      .state('admin.seasons.create', {
+        url: '/create',
+        controller: 'AdminSeasonsCreateController',
+        templateUrl: 'assets/templates/app/admin/seasons/create.html',
+        data : {
+          section: 'Create Season'
+        }
+      })
+
+      .state('admin.seasons.detail', {
+        url: '/:id',
+        controller: 'AdminSeasonsDetailController',
+        templateUrl: 'assets/templates/app/admin/seasons/detail.html',
+        data : {
+          section: 'Season Detail'
+        }
+      })
+
 
       .state('admin.timeslots', {
         url: '/timeslots',
