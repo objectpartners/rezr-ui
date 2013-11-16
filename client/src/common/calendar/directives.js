@@ -52,9 +52,9 @@
         var day = 1,
           rows = Math.ceil((monthLength + startDay) / 7);
 
-        for (i = 0; i < rows; i++) {
+        for (var i = 0; i < rows; i++) {
           var row = ['<tr>'];
-          for (j = 0; j < 7; j++) {
+          for (var j = 0; j < 7; j++) {
             row.push('<td>');
             if (day <= monthLength && (i > 0 || j >= startDay)) {
               if (dates.indexOf(day) != -1) row.push('<div class="cal-day cal-highlight" data-cal="' + year + '/' + month + '/' + day + '">');
