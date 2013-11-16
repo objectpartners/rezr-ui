@@ -40,7 +40,7 @@
     'authorizationProvider', 
     function ($stateProvider, $httpProvider, $urlRouterProvider, authorizationProvider) {
     
-      $urlRouterProvider.otherwise("/main");
+      $urlRouterProvider.otherwise("/rezr/dashboard");
 
       $stateProvider.state('main', {
         url: '/main',
