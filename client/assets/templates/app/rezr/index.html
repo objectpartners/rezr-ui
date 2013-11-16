@@ -1,4 +1,16 @@
-<h1>Rezr</h1>
-
-<div ui-calendar="uiConfig.calendar" ng-model="eventSources"></div>
+<div class="row" ng-show="$state.is('rezr')">
+  <div class="col-xs-12">
+    <div class="row">
+      <div class="col-xs-12">
+        <h1>Reservations</h1>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-xs-12">
+        <div ui-calendar="uiConfig.calendar" ng-model="eventSources"></div>
+      </div>
+    </div>
+  </div>
+</div>
 <div ui-view></div>
