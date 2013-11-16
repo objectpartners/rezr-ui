@@ -81,6 +81,14 @@
             }
           }),
 
+          reservation : $resource($apiUrl + '/reservation', {
+            id: '@id'
+            }, {
+              update : {
+                method: 'PUT'
+              }
+            }),
+
           // rezr
 
 

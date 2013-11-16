@@ -16,25 +16,33 @@
 
     .controller('RezrDashboardController', [
       '$scope',
-      function ($scope) {
-        var date = new Date();
-        var d = date.getDate();
-        var m = date.getMonth();
-        var y = date.getFullYear();
+      '$control',
+      function ($scope, $control) {
+        $scope.reservation = {
+          startDate: null,
+          endDate: null
+        };
 
-        $scope.events = [
-          {title: 'Some Reservation',start: new Date(y, m - 1, 27), end: new Date(y, m, 1)},
-          {title: 'Some Reservation',start: new Date(y, m , 4), end: new Date(y, m, 7)},
-          {title: 'Some Reservation',start: new Date(y, m , 10), end: new Date(y, m, 16)},
-          {title: 'Some Reservation',start: new Date(y, m , 19), end: new Date(y, m, 26)},
-        ];
+        $scope.reservationEvents = [];
+        $scope.events = [];
+
+        $scope.getReservations = function (page) {
+          $control.getAll('reservation', page).then(function (reservations) {
+            logger.debug(reservations);
+            angular.forEach(reservations, function(reservation) {
+              $scope.events.push({title: 'Reserved',start: moment(reservation.startDate).toDate(), end: moment(reservation.endDate).toDate()});
+            });
+
+          });
+        };
+
+        $scope.getReservations();
 
         $scope.eventSources = [$scope.events];
 
         $scope.uiConfig = {
           calendar:{
-            //height: 450,
-            editable: true,
+            editable: false,
             header:{
               left: '',
               right: 'today prev,next'
@@ -51,7 +59,8 @@
 
     .controller('RezrTimeslotsController', [
       '$scope',
-      function ($scope) {
+      '$control',
+      function ($scope, $control) {
         var date = new Date();
         var d = date.getDate();
         var m = date.getMonth();
@@ -63,6 +72,7 @@
         };
 
         $scope.reservationEvents = [];
+        $scope.events = [];
 
         $scope.$watch('reservation', function() {
           var startDate = null,
@@ -96,11 +106,17 @@
           );
         }, true);
 
-        $scope.events = [
-          {title: 'Another Reservation',start: new Date(y, m - 1, 27), end: new Date(y, m, 1)},
-          {title: 'Another Reservation',start: new Date(y, m , 4), end: new Date(y, m, 7)},
-          {title: 'Another Reservation',start: new Date(y, m , 19), end: new Date(y, m, 26)},
-        ];
+        $scope.getReservations = function (page) {
+          $control.getAll('reservation', page).then(function (reservations) {
+            logger.debug(reservations);
+            angular.forEach(reservations, function(reservation) {
+              $scope.events.push({title: 'Reserved',start: moment(reservation.startDate).toDate(), end: moment(reservation.endDate).toDate()});
+            });
+
+          });
+        };
+
+        $scope.getReservations();
 
         $scope.eventSources = [$scope.events, $scope.reservationEvents];
 

@@ -29,47 +29,49 @@
           {
             "id" : 1,
             "name" : "Summer 2011",
-            "startDate" : moment(new Date()).subtract('years', 2).toISOString(),
-            "endDate" : moment(new Date()).subtract('years', 2).toISOString(),
+            "startDate" : moment(new Date()).subtract('years', 2).format("YYYY-MM-DD"),
+            "endDate" : moment(new Date()).subtract('years', 2).format("YYYY-MM-DD"),
             "state" : "OPEN"
           },
           {
             "id" : 2,
             "name" : "Winter 2011",
-            "startDate" : moment(new Date()).subtract('years', 2).toISOString(),
-            "endDate" : moment(new Date()).subtract('years', 2).toISOString(),
+            "startDate" : moment(new Date()).subtract('years', 2).format("YYYY-MM-DD"),
+            "endDate" : moment(new Date()).subtract('years', 2).format("YYYY-MM-DD"),
             "state" : "OPEN"
           },
           {
             "id" : 3,
             "name" : "Summer 2012",
-            "startDate" : moment(new Date()).subtract('years', 1).toISOString(),
-            "endDate" : moment(new Date()).subtract('years', 1).toISOString(),
+            "startDate" : moment(new Date()).subtract('years', 1).format("YYYY-MM-DD"),
+            "endDate" : moment(new Date()).subtract('years', 1).format("YYYY-MM-DD"),
             "state" : "OPEN"
           },
           {
             "id" : 4,
             "name" : "Winter 2012",
-            "startDate" : moment(new Date()).subtract('years', 1).toISOString(),
-            "endDate" : moment(new Date()).subtract('years', 1).toISOString(),
+            "startDate" : moment(new Date()).subtract('years', 1).format("YYYY-MM-DD"),
+            "endDate" : moment(new Date()).subtract('years', 1).format("YYYY-MM-DD"),
             "state" : "OPEN"
           },
           {
             "id" : 5,
             "name" : "Summer 2013",
-            "startDate" : moment(new Date()).toISOString(),
-            "endDate" : moment(new Date()).toISOString(),
+            "startDate" : moment(new Date()).format("YYYY-MM-DD"),
+            "endDate" : moment(new Date()).format("YYYY-MM-DD"),
             "state" : "OPEN"
           },
           {
             "id" : 6,
             "name" : "Winter 2013",
-            "startDate" : moment(new Date()).toISOString(),
-            "endDate" : moment(new Date()).toISOString(),
+            "startDate" : moment(new Date()).format("YYYY-MM-DD"),
+            "endDate" : moment(new Date()).format("YYYY-MM-DD"),
             "state" : "OPEN"
           },
 
         ];
+
+        logger.debug($scope.seasons);
 
         $scope.createNew = function createNew () {
           $state.go('admin.seasons.create');

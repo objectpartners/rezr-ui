@@ -75,7 +75,7 @@
       function ($compile, $parse, $document, dateFilter, datepickerPopupConfig) {
         return {
           restrict: 'EA',
-          require: 'ngModel',
+          require: '?ngModel',
           link: function(originalScope, element, attrs, ngModel) {
             var closeOnDateSelection = angular.isDefined(attrs.closeOnDateSelection) ? scope.$eval(attrs.closeOnDateSelection) : datepickerPopupConfig.closeOnDateSelection;
             var dateFormat = attrs.rezrDatepickerPopup || datepickerPopupConfig.dateFormat;
@@ -230,7 +230,6 @@
               var date = ngModel.$viewValue ? dateFilter(ngModel.$viewValue, dateFormat) : '';
               element.val(date);
               updateDatepicker();
-              logger.debug('here');
 
               if (closeOnDateSelection) {
                 setOpen( false );
@@ -240,8 +239,6 @@
             function updateDatepicker() {
               scope.date = ngModel.$viewValue;
             }
-
-            
 
             element.bind('input change keyup', function() {
               scope.$apply(function() {
