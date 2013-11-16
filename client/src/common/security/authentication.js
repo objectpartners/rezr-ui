@@ -72,7 +72,10 @@
 
           var user = {username: 'demo@opi.com', firstName: 'OPI', lastName: 'Rules', authenticated: true};
           authentication.setAuthentication(user);
-          deferred.resolve(user);
+          processRetry(true);
+          $timeout(function () {
+            deferred.resolve(user);
+          }, 1000);
 
           // $api.login.login({user : {username: username, password: password}}).$promise.then(function(user) {
           //   authentication.setAuthentication(user);

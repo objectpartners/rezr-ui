@@ -124,10 +124,6 @@
         authorization.requireAuthenticatedUser().then(function () {
           $scope.showQuickViewItem = true;
 
-          $scope.badgeCount = authorization.requireAuthenticatedUser().then(function() {
-            return systemMonitoringNotificationMockDataService.getNotificationCount($scope.item.id); 
-          });
-
           $scope.quickViewItemClicked = function(item, event) {
             authorization.requireAuthenticatedUser().then(function() {
               if(quickviewSharedEventService.isActivated() && quickviewSharedEventService.getView() === item.id) {
