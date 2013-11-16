@@ -1,5 +1,5 @@
 <ul class="dropdown-menu rez-topnav-dropdown" ng-show="user.authenticated">
-  <li class="user-label">{{user.lastName}}, {{user.firstName}}</li>
+  <li class="user-label">{{user.username}}</li>
   <li ng-repeat="dropdownItem in item.dropdown">
     <div ng-if="dropdownItem.href">
       <a ng-href="{{dropdownItem.href}}">
