@@ -16,7 +16,14 @@
     .controller('AdminSeasonsController', [
       '$scope',
       '$state',
-      function ($scope, $state) {
+      '$control',
+      function ($scope, $state, $control) {
+
+        $scope.getSeasons = function (page) {
+          $control.getAll('seasons', page).then(function (seasons) {
+            $scope.seasons = seasons;
+          });
+        };
 
         $scope.seasons = [
           {
@@ -100,18 +107,30 @@
       '$scope',
       '$state',
       '$stateParams',
-      function ($scope, $state, $stateParams) {
+      '$control',
+      function ($scope, $state, $stateParams, $control) {
+
+        $scope.requestSeason = function () {
+          $control.get('season', {id: $stateParams.seasonId}).then(function (season) {
+            $scope.season = season;
+          });
+        };
 
         $scope.season = $scope.seasons[$stateParams.id];
 
-        $scope.create = function create () {
-          $state.go('admin.seasons');
+        $scope.update = function update () {
+          $scope.season.$update(function(data){
+            notifications.displayMessage({message : "Season " + data.name + " was updated.", type: 'success'});   
+          }, function(err){
+            notifications.displayMessage({message : "There was a problem updating " + data.name + ".", type: 'error'});  
+          });
         };
 
         $scope.cancel = function cancel () {
           $state.go('admin.seasons');
         };
 
+        $scope.requestSeason();
       }
     ])
 
@@ -125,24 +144,14 @@
     .controller('AdminPropertiesController', [
       '$scope',
       '$state',
-      function ($scope, $state) {
+      '$control',
+      function ($scope, $state, $control) {
 
-        $scope.properties = [
-          {
-            "name" : "Cabin",
-            "address" : "123 opi lane",
-            "city" : "cabintown",
-            "state" : "WI", 
-            "zip" : "12345"
-          },
-          {
-            "name" : "Condo",
-            "address" : "123 condo lane",
-            "city" : "condotown",
-            "state" : "WI",
-            "zip" : "12345"
-          }
-        ];      
+        $scope.getProperties = function (page) {
+          $control.getAll('vacationProperty', page).then(function (properties) {
+            $scope.properties = properties;
+          });
+        };
 
         $scope.search = function () {
           // $control.getPage('internalUser', 0, {q : $scope.q}).then(function (pageConfig){
@@ -157,20 +166,22 @@
         $scope.createNew = function createNew () {
           $state.go('admin.properties.new');
         };
+
+        $scope.getProperties(0);
       }
     ])
 
     .controller('AdminPropertiesDetailController', [
       '$scope',
       '$state',
-      function ($scope, $state) {
+      '$control',
+      '$stateParams',
+      function ($scope, $state, $control, $stateParams) {
 
-        $scope.property = {
-          "name" : "Cabin",
-          "address" : "123 opi lane",
-          "city" : "cabintown",
-          "state" : "WI", 
-          "zip" : "12345"
+        $scope.requestVacationProperty = function (propertyId) {
+          $control.get('vacationProperty', propertyId).then(function (property) {
+            $scope.property = property;
+          });
         };
 
         $scope.update = function update () {
@@ -188,6 +199,8 @@
           // refresh the model
           $state.go('admin.properties');
         };
+
+        $scope.requestVacationProperty($stateParams.id);
       }
     ]);
 

@@ -70,25 +70,25 @@
         login: function(username, password) {
           var deferred = $q.defer();
 
-          var user = {username: 'demo@opi.com', firstName: 'OPI', lastName: 'Rules', authenticated: true};
-          authentication.setAuthentication(user);
-          processRetry(true);
-          $timeout(function () {
-            deferred.resolve(user);
-          }, 1000);
-
-          // $api.login.login({username: username, password: password}).$promise.then(function(user) {
-          //   authentication.setAuthentication(user);
-
-          //   if (securityContext.authenticated) {
-          //     processRetry(true);
-          //   }
-
+          // var user = {username: 'demo@opi.com', firstName: 'OPI', lastName: 'Rules', authenticated: true};
+          // authentication.setAuthentication(user);
+          // processRetry(true);
+          // $timeout(function () {
           //   deferred.resolve(user);
-          // },
-          // function (x) {
-          //   deferred.reject(x);
-          // });
+          // }, 1000);
+
+          $api.login.login({username: username, password: password}).$promise.then(function(user) {
+            authentication.setAuthentication(user);
+
+            if (securityContext.authenticated) {
+              processRetry(true);
+            }
+
+            deferred.resolve(user);
+          },
+          function (x) {
+            deferred.reject(x);
+          });
 
           return deferred.promise;
         },

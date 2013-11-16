@@ -71,7 +71,7 @@
       })
 
       .state('admin.properties.detail', {
-        url: '/detail',
+        url: '/:id',
         controller: 'AdminPropertiesDetailController',
         templateUrl: 'assets/templates/app/admin/properties/detail.html',
         data : {
