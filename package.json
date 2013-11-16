@@ -3,7 +3,7 @@
   "title": "OPI Cabin Reservation System",
   "main": "./client/dist/release/main.js",
   "description": "OPI Cabin Reservation System",
-  "version": "2.0.0-SNAPSHOT",
+  "version": "0.0.1-SNAPSHOT",
   "dependencies": {
     "express": "3.2.6",
     "socket.io": "0.9.16",

@@ -3,7 +3,7 @@
   "title": "Cabin Reservation System",
   "main": "./client/dist/release/main.js",
   "description": "OPI Cabin Reservation System",
-  "version": "2.0.0-SNAPSHOT",
+  "version": "0.0.1-SNAPSHOT",
   "dependencies": {
     "jquery": "2.0.3",
     "lodash": "1.3.1",
