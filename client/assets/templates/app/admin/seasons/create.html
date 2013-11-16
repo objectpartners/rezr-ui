@@ -42,8 +42,7 @@
         <div rezr-field-wrap input-id="season-state" label="State">
           <input type="text" class="form-control" 
             name="season-state" placeholder="State"
-            ng-model="season.state" 
-            ng-minlength="1" ng-maxlength="2">
+            ng-model="season.state">
         </div>
       </div>
   
@@ -53,7 +52,7 @@
         <div class="col-xs-12">
           <div class="pull-right">
             <button type="button" class="btn btn-default" ng-click="create()" ng-disabled="createSeason.$invalid">Create</button>
-            <button type="button" class="btn btn-danger" ng-click="cancel()" ng-disabled="createSeason.$invalid">Cancel</button>
+            <button type="button" class="btn btn-danger" ng-click="cancel()">Cancel</button>
           </div>
       </div>
     </form>

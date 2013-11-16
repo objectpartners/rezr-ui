@@ -158,7 +158,7 @@
               scope.$apply(function() {
                 scope.layoutPopover();
               });
-            }, 50); // Debounce 50ms so we don't trigger too many redraws
+            }, 10); // Debounce 50ms so we don't trigger too many redraws
 
             windowEl.on('resize.panel-popover', function(event){
               recalculateStyles();
@@ -171,7 +171,11 @@
 
             scope.$watch('isOpen', function(newValue) {
               if (newValue) {
-                scope.layoutPopover();
+                _.delay(function() {
+                  scope.$apply(function() {
+                    scope.layoutPopover();
+                  });
+                }, 10);
               }
             });
           }

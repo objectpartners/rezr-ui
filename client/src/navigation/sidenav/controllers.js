@@ -37,7 +37,7 @@
               'subitems': [
                 { 'state': 'admin.seasons', 'title': 'Season', 'position': 1},
                 { 'state': 'admin.timeslots', 'title': 'Time Slots', 'position': 2},
-                { 'state': 'admin.properties', 'title': 'Properties', 'position': 3}
+                { 'state': 'admin.properties', 'title': 'Vacation Properties', 'position': 3}
               ]
             }
           ];
