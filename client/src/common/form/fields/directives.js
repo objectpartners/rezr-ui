@@ -79,7 +79,7 @@
           link: function(originalScope, element, attrs, ngModel) {
             var closeOnDateSelection = angular.isDefined(attrs.closeOnDateSelection) ? scope.$eval(attrs.closeOnDateSelection) : datepickerPopupConfig.closeOnDateSelection;
             var dateFormat = attrs.rezrDatepickerPopup || datepickerPopupConfig.dateFormat;
-
+            
             // create a child scope for the datepicker directive so we are not polluting original scope
             var scope = originalScope.$new();
             originalScope.$on('$destroy', function() {
@@ -231,6 +231,7 @@
 
             // Change from field
             ngModel.$render = function() {
+              logger.debug('here2');
               var date = ngModel.$viewValue ? dateFilter(ngModel.$viewValue, dateFormat) : '';
               element.val(date);
               updateDatepicker();
