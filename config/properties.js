@@ -37,7 +37,7 @@ module.exports = {
   },
 
   proxy : {
-    '\/d3-control-rest\/api\/.*' : {
+    '\/rezr-api\/.*' : {
       urlType: 'pass',
       protocol: 'http',
       host: 'localhost',

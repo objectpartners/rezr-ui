@@ -41,16 +41,6 @@
     function ($stateProvider, $httpProvider, $urlRouterProvider, authorizationProvider) {
     
       $urlRouterProvider.otherwise("/rezr/dashboard");
-
-      $stateProvider.state('main', {
-        url: '/main',
-        controller: 'Main Controller',
-        templateUrl: 'assets/templates/main.html',
-        resolve : {
-          authenticatedUser: authorizationProvider.requireAuthenticatedUser
-        }
-      });
-
   }])
 
   .run(['$state', '$rootScope', '$stateParams', function ($state, $rootScope, $stateParams) {

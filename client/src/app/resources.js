@@ -45,15 +45,18 @@
           // security
           login : $resource($apiUrl + '/login', {}, {
             'login' : {
-              method: 'POST'
+              method: 'POST',
+              headers: {'X-Requested-With': 'XMLHttpRequest'}
             },
             'current' : {
-              method: 'GET'
+              method: 'GET',
+              headers: {'X-Requested-With': 'XMLHttpRequest'}
             }
           }),
           logout : $resource($apiUrl + '/logout', {}, {
             'logout' : {
-              method: 'POST'
+              method: 'POST',
+              headers: {'X-Requested-With': 'XMLHttpRequest'}
             }
           }),
           // ui 
@@ -65,7 +68,7 @@
       }
     ]);
   
-  resources.value('$apiUrl', '/rezr/api');
+  resources.value('$apiUrl', '/rezr-api');
 
   logger.debug("Registered api.resources");
 
