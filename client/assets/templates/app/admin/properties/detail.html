@@ -2,12 +2,12 @@
   <div class="col-xs-12">
     <form class="form-horizontal" novalidate name="propertiesDetail">
       
-      <div rezr-form-section-header header="Details"></div>
+      <div rezr-form-section-header header="Vacation Property"></div>
 
       <div class="form-group">
-        <div rezr-field-wrap input-id="property-name" label="Property Name">
+        <div rezr-field-wrap input-id="property-name" label="Name">
           <input type="text" class="form-control" 
-            name="propert-name"
+            name="propert-name" placeholder="Name"
             ng-model="property.name">
         </div>
       </div>
@@ -51,6 +51,7 @@
         <div class="col-xs-12">
           <div class="pull-right">
             <button type="button" class="btn btn-default" ng-click="update()" ng-disabled="propertiesDetail.$invalid">Update</button>
+            <button type="button" class="btn btn-danger" ng-click="cancel()">Cancel</button>
           </div>
       </div>
     </form>

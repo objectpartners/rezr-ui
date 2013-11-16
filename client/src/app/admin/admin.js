@@ -66,7 +66,7 @@
         controller: 'AdminPropertiesController',
         templateUrl: 'assets/templates/app/admin/properties/index.html',
         data: {
-          section: 'Properties'
+          section: 'Vacation Properties'
         }
       })
 
@@ -84,7 +84,7 @@
         controller: 'AdminPropertiesDetailController',
         templateUrl: 'assets/templates/app/admin/properties/detail.html',
         data : {
-          section: 'Property Detail'
+          section: 'Vacation Property Detail'
         }
       });
   }]);
