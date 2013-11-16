@@ -6,6 +6,7 @@
 
   var app = angular.module('common', [
     'common.color.picker',
+    'common.calendar.directives',
     'common.form.directives',
     'common.form.field.directives',
     'common.form.controllers',

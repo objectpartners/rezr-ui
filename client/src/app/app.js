@@ -9,7 +9,9 @@
     'app.directives', 
     'app.controllers',
     'app.resources',
-    'app.services'
+    'app.services',
+    'rezr',
+    'admin'
   ]);
 
 
