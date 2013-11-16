@@ -9,6 +9,14 @@
     .controller('RezrController', [
       '$scope',
       function ($scope) {
+        
+         
+      }
+    ])
+
+    .controller('RezrDashboardController', [
+      '$scope',
+      function ($scope) {
         var date = new Date();
         var d = date.getDate();
         var m = date.getMonth();
@@ -36,6 +44,7 @@
          
       }
     ])
+
 
     .controller('RezrTimeslotsController', [
       '$scope',

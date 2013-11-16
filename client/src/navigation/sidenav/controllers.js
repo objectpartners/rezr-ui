@@ -26,7 +26,7 @@
 
         authorization.requireAuthenticatedUser().then(function (user) {
           $scope.items = [
-            { 'state': 'rezr', 'icon': 'dashboard', 'title': 'Reservations', 'position': 1,
+            { 'state': 'rezr.dashboard', 'icon': 'dashboard', 'title': 'Reservations', 'position': 1,
               'subitems': [
                 {'state': 'rezr.timeslots', 'title': 'Reserve a Time Slot', 'position': 1},
                 {'state': 'rezr.admin', 'title': 'Admin Reservations', 'position': 2}
