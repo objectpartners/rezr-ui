@@ -20,56 +20,10 @@
       function ($scope, $state, $control) {
 
         $scope.getSeasons = function (page) {
-          $control.getAll('seasons', page).then(function (seasons) {
+          $control.getAll('season', page).then(function (seasons) {
             $scope.seasons = seasons;
           });
         };
-
-        $scope.seasons = [
-          {
-            "id" : 1,
-            "name" : "Summer 2011",
-            "startDate" : moment(new Date()).subtract('years', 2).toISOString(),
-            "endDate" : moment(new Date()).subtract('years', 2).toISOString(),
-            "state" : "OPEN"
-          },
-          {
-            "id" : 2,
-            "name" : "Winter 2011",
-            "startDate" : moment(new Date()).subtract('years', 2).toISOString(),
-            "endDate" : moment(new Date()).subtract('years', 2).toISOString(),
-            "state" : "OPEN"
-          },
-          {
-            "id" : 3,
-            "name" : "Summer 2012",
-            "startDate" : moment(new Date()).subtract('years', 1).toISOString(),
-            "endDate" : moment(new Date()).subtract('years', 1).toISOString(),
-            "state" : "OPEN"
-          },
-          {
-            "id" : 4,
-            "name" : "Winter 2012",
-            "startDate" : moment(new Date()).subtract('years', 1).toISOString(),
-            "endDate" : moment(new Date()).subtract('years', 1).toISOString(),
-            "state" : "OPEN"
-          },
-          {
-            "id" : 5,
-            "name" : "Summer 2013",
-            "startDate" : moment(new Date()).toISOString(),
-            "endDate" : moment(new Date()).toISOString(),
-            "state" : "OPEN"
-          },
-          {
-            "id" : 6,
-            "name" : "Winter 2013",
-            "startDate" : moment(new Date()).toISOString(),
-            "endDate" : moment(new Date()).toISOString(),
-            "state" : "OPEN"
-          },
-
-        ];
 
         $scope.createNew = function createNew () {
           $state.go('admin.seasons.create');
@@ -79,6 +33,7 @@
           $state.go('admin.seasons.detail', {id: propertyId});
         };
 
+        $scope.getSeasons(0);
       }
     ])
 
@@ -111,12 +66,10 @@
       function ($scope, $state, $stateParams, $control) {
 
         $scope.requestSeason = function () {
-          $control.get('season', {id: $stateParams.seasonId}).then(function (season) {
+          $control.get('season', $stateParams.seasonId).then(function (season) {
             $scope.season = season;
           });
         };
-
-        $scope.season = $scope.seasons[$stateParams.id];
 
         $scope.update = function update () {
           $scope.season.$update(function(data){
@@ -166,6 +119,8 @@
         $scope.createNew = function createNew () {
           $state.go('admin.properties.create');
         };
+
+        $scope.getProperties(0);
       }
     ])
 
@@ -178,8 +133,6 @@
           // refresh the model
           $state.go('admin.properties');
         };
-
-        $scope.getProperties(0);
       }
     ])
 

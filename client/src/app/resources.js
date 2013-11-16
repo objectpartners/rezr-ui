@@ -54,13 +54,6 @@
           season : $resource($apiUrl + '/season', {
             id: '@id'
           }, {
-            'query' : {
-              method: 'GET',
-              params: {
-                page: '@page',
-                size: '10'
-              }
-            },
             update : {
               method: 'PUT'
             }
@@ -69,13 +62,6 @@
           timeslot : $resource($apiUrl + '/timeslot', {
             id: '@id'
           }, {
-            'query' : {
-              method: 'GET',
-              params: {
-                page: '@page',
-                size: '10'
-              }
-            },
             update : {
               method: 'PUT'
             }
