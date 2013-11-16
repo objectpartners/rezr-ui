@@ -124,6 +124,10 @@
         authorization.requireAuthenticatedUser().then(function () {
           $scope.showQuickViewItem = true;
 
+          $scope.badgeCount = authorization.requireAuthenticatedUser().then(function() {
+            return systemMonitoringNotificationMockDataService.getNotificationCount($scope.item.id); 
+          });
+
           $scope.quickViewItemClicked = function(item, event) {
             authorization.requireAuthenticatedUser().then(function() {
               if(quickviewSharedEventService.isActivated() && quickviewSharedEventService.getView() === item.id) {
@@ -158,44 +162,6 @@
           };
         });
 
-      }
-    ])
-
-    .controller('TopnavInstitutionSelectController', [
-      '$scope',
-      'securityContext',
-      'authorization',
-      function ($scope, securityContext, authorization) {
-
-        $scope.context = {
-          institutions : [],
-          institution : {}
-        };
-
-        $scope.institutionSelectOptions = {
-          allowClear : false
-        };
-
-        authorization.requireInstitutionContext().then(function() {
-          $scope.$watch(function () { 
-            return securityContext.authorizedCompanies;
-          }, function () {
-              $scope.context.institutions = securityContext.authorizedCompanies;
-
-              authorization.requireInstitutionContext().then(function(institutionContext) {
-                var selectedInstitution = _.find($scope.context.institutions, function (institution){
-                  return institution.id === institutionContext;
-                });
-                $scope.context.institution = selectedInstitution.id;
-              });
-          });
-
-          $scope.$watch("context.institution", function (institution, oldValue) {
-            if (+institution > 0) {
-              securityContext.institutionContext = institution;
-            }
-          });
-        });
       }
     ]);
 

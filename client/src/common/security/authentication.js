@@ -70,18 +70,22 @@
         login: function(username, password) {
           var deferred = $q.defer();
 
-          $api.login.login({user : {username: username, password: password}}).$promise.then(function(user) {
-            authentication.setAuthentication(user);
-            
-            if (securityContext.authenticated) {
-              processRetry(true);
-            }
+          var user = {username: 'demo@opi.com', firstName: 'OPI', lastName: 'Rules', authenticated: true};
+          authentication.setAuthentication(user);
+          deferred.resolve(user);
 
-            deferred.resolve(user);
-          },
-          function (x) {
-            deferred.reject(x);
-          });
+          // $api.login.login({user : {username: username, password: password}}).$promise.then(function(user) {
+          //   authentication.setAuthentication(user);
+
+          //   if (securityContext.authenticated) {
+          //     processRetry(true);
+          //   }
+
+          //   deferred.resolve(user);
+          // },
+          // function (x) {
+          //   deferred.reject(x);
+          // });
 
           return deferred.promise;
         },
@@ -96,22 +100,25 @@
 
         // Ask the backend to see if a user is already authenticated - this may be from a previous session.
         requestCurrentUser: function() {
-          if ( securityContext.authenticated ) {
-            return $q.when(securityContext.user);
-          } else {
-            return $api.login.current().$promise.then(function(currentUser) {
-        
-              if(currentUser.username) {
-                notifications.displayMessage({message: "Welcome Back, " + currentUser.username + ".", type: 'success', id: 'welcome-message' });
-                var stop = $timeout(function () {
-                  notifications.displayMessage({message: "You have 4 new messages.", type: 'info', id:'message-alert'});
-                  $timeout.cancel(stop);
-                }, 8000);
-              }
 
-              return authentication.setAuthentication(currentUser);  
-            });
-          }
+          return  $q.when({username: 'demo@opi.com', firstName: 'OPI', lastName: 'Rules', authenticated: true});
+
+          // if ( securityContext.authenticated ) {
+          //   return $q.when(securityContext.user);
+          // } else {
+          //   return $api.login.current().$promise.then(function(currentUser) {
+        
+          //     if(currentUser.username) {
+          //       notifications.displayMessage({message: "Welcome Back, " + currentUser.username + ".", type: 'success', id: 'welcome-message' });
+          //       var stop = $timeout(function () {
+          //         notifications.displayMessage({message: "You have 4 new messages.", type: 'info', id:'message-alert'});
+          //         $timeout.cancel(stop);
+          //       }, 8000);
+          //     }
+
+          //     return authentication.setAuthentication(currentUser);  
+          //   });
+          // }
         },
 
         setAuthentication : function (authenticationData) {

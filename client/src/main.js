@@ -40,7 +40,7 @@
     'authorizationProvider', 
     function ($stateProvider, $httpProvider, $urlRouterProvider, authorizationProvider) {
     
-      $urlRouterProvider.otherwise("/dashboard/user");
+      $urlRouterProvider.otherwise("/main");
 
   }])
 

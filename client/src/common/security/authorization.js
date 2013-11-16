@@ -70,32 +70,12 @@
             return promise;
           },
 
-          requireInstitutionContext : function () {
-            var deferred = $q.defer();
-            var queue = $injector.get('security.retry.queue');
-            var institutionContext = +securityContext.institutionContext;
-
-            if (institutionContext > 0) {
-              deferred.resolve(institutionContext);
-            }
-            else {
-              service.requireAuthenticatedUser().then(function() {
-                securityContext.institutionContext = securityContext.user.companyId;
-                deferred.resolve(securityContext.institutionContext);
-              });
-            }
-
-            return deferred.promise;
-          },
-
           hasAuthorization : function (authorization) {
-            // TODO - Bruce - refactor after integrating new security. 
-            // var auth = _.find(securityContext.permissions, function(permission) {
-            //   return permission === authorization;
-            // });
+            var auth = _.find(securityContext.permissions, function(permission) {
+              return permission === authorization;
+            });
 
-            // return !!auth;
-            return true;
+            return !!auth;
           }
 
         };

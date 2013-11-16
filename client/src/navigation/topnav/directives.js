@@ -108,17 +108,6 @@
           }
         };
       }]
-    )
-
-    .directive('topnavInstitutionSelect', 
-      function () {
-        return {
-          replace: true,
-          restrict: 'A',
-          controller: 'TopnavInstitutionSelectController',
-          templateUrl: 'assets/templates/navigation/topnav/institution.select.html'
-        };
-      }
     );
 
 }());
