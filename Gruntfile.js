@@ -132,6 +132,7 @@ module.exports = function (grunt) {
           '<%= components %>/angular-ui-router/release/angular-ui-router.js',
           '<%= components %>/angular-ui-utils/components/angular-ui-docs/build/ui-utils.js',
           '<%= components %>/angular-dragdrop/src/angular-dragdrop.js',
+          '<%= components %>/angular-ui-calendar/src/calendar.js',
 
           //Highcharts
           '<%= components %>/highcharts/highcharts.src.js',
@@ -144,6 +145,9 @@ module.exports = function (grunt) {
 
           // logger
           '<%= components %>/javascript-debug/ba-debug.js',
+
+          // Full calendar
+          '<%= components %>/angular-ui-calendar/src/calendar.js',
 
           // utilities
           '<%= components %>/lodash/dist/lodash.js',
@@ -179,6 +183,7 @@ module.exports = function (grunt) {
           "<%= components %>/messenger/build/css/messenger.css",
           "<%= components %>/messenger/build/css/messenger-theme-air.css",
           "<%= components %>/messenger/build/css/messenger-spinner.css",
+          "<%= components %>/fullcalendar/fullcalendar.css",
           "<%= clientdist %>/assets/css/style.css"
         ],
         dest: "<%= clientdist %>/assets/css/style.css"
