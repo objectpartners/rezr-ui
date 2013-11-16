@@ -93,9 +93,8 @@
   left: -@side-nav-container-width;
   width: @side-nav-container-width;
 
-  background-image: url('../img/fabric_plaid/fabric_plaid.png');
   background-repeat: repeat;
-  .box-shadow(~"inset -14px 1px 27px -13px rgba(0, 0, 0, 0.3)");
+  background-color: lighten(@brand-primary, 70%);
   .transition(~"left 0.3s ease-in-out");
 }
 
@@ -117,9 +116,9 @@
   right: -@quick-view-container-width;
   width: @quick-view-container-width;
 
-  background-image: url('../img/fabric_plaid/fabric_plaid.png');
+  //background-image: url('../img/fabric_plaid/fabric_plaid.png');
   background-repeat: repeat;
-  .box-shadow(~"inset 14px 1px 27px -13px rgba(0, 0, 0, 0.3)");
+  //.box-shadow(~"inset 14px 1px 27px -13px rgba(0, 0, 0, 0.3)");
 }
 
 // Renders the sidenav for an authenticated user
