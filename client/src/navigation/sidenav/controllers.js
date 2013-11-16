@@ -25,9 +25,22 @@
         });
 
         authorization.requireAuthenticatedUser().then(function (user) {
-          $control.getAll('sidenav').then(function(items) {
-            $scope.items = items;
-          });
+          $scope.items = [
+            { 'state': 'rezr', 'icon': 'dashboard', 'title': 'Reservations', 'position': 1,
+              'subitems': [
+                {'state': 'rezr.timeslots', 'title': 'Reserve a Time Slot', 'position': 1},
+                {'state': 'rezr.admin', 'title': 'Admin Reservations', 'position': 2}
+              ]
+            },
+            { 'state': 'admin', 'icon': 'cogs', 'title': 'Administration', 'position': 2,
+              'subitems': [
+                { 'state': 'admin.seasons', 'title': 'Season', 'position': 1},
+                { 'state': 'admin.timeslots', 'title': 'Time Slots', 'position': 2},
+                { 'state': 'admin.properties', 'title': 'Properties', 'position': 3}
+              ]
+            }
+          ];
+
         });
       }
     ])
