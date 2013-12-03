@@ -1,4 +1,4 @@
-# D3 Control UI #
+# REZR UI #
 
 ## Getting Started ##
 
