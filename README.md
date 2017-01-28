@@ -9,7 +9,7 @@
 * [SocketIO](http://socket.io/)
 * [Angular](http://angularjs.org/)
 * [karma](http://karma-runner.github.io/0.8/index.html)
-* [Mocha](http://visionmedia.github.io/mocha/)
+* [Mocha](http://mochajs.org/)
 * [chai](http://chaijs.com/)
 * [sinon](http://sinonjs.org/)
 * [Bootstrap](http://twitter.github.io/bootstrap/)
